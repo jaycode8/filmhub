@@ -1,0 +1,64 @@
+.footer {
+    width: 100%;
+    height: 7rem;
+    padding: 1rem 0;
+    background-color: #000;
+    border-top: 1px solid #ccc;
+    .copyright {
+        width: 100%;
+        color: #fff;
+        span {
+            display: grid;
+            place-items: center;
+            grid-auto-flow: column;
+            gap: .4rem;
+            justify-content: center;
+            font-size: 1.2rem;
+            a {
+                color: #fff;
+                transition: all .3s;
+                font-size: 1.2rem;
+            }
+            a:hover{
+                color: rgb(243, 135, 11);
+            }
+        }
+    }
+    .developer{
+        width: 100%;
+        color: #fff;
+        span{
+            font-size: 1rem;
+            a {
+                color: #fff;
+                transition: all .3s;
+                font-size: 1rem;
+            }
+            a:hover{
+                color: rgb(243, 135, 11);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    .footer{
+        .copyright{
+            span{
+                font-size: 1rem;
+                a{
+                    font-size: 1rem;
+                }
+            }
+        }
+        .developer{
+            span{
+                font-size: .9rem;
+                a{
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}

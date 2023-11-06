@@ -1,0 +1,123 @@
+@import "../../variable.scss";
+.navbar {
+    width: 100%;
+    height: 3rem;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    .logo,
+    .navBtn {
+        font-size: 1.6rem;
+        color: $text-white;
+    }
+    .navBtn {
+        cursor: pointer;
+    }
+    nav {
+        position: absolute;
+        top: 3rem;
+        right: 4rem;
+        list-style: none;
+        background: $cardBg;
+        border-radius: 1rem;
+        border-top-right-radius: 0;
+        width: 50rem;
+        padding: 1rem;
+        display: grid;
+        place-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        gap: 0.5rem;
+        transform: scale(0);
+        transform-origin: top right;
+        transition: all 0.2s ease;
+        a {
+            text-decoration: none;
+            li {
+                background: transparent;
+                padding: 0.5rem 1rem;
+                border: 1px solid $border;
+                color: $grayish;
+                width: 10rem;
+                transition: all 0.2s ease;
+            }
+            li:hover {
+                background: $text-dark;
+                color: $text-white;
+            }
+        }
+    }
+    nav.active {
+        transform: scale(1);
+    }
+    form{
+        position: absolute;
+        right: 10rem;
+        display: grid;
+        place-items: center;
+        grid-auto-flow: column;
+        input{
+            outline: none;
+            border: 1px solid #fff;
+            padding: .3rem .6rem;
+            border-radius: .3rem;
+            background: transparent;
+            color: #fff; 
+        }
+        button{
+            outline: none;
+            border: 0;
+            background: transparent;
+            display: flex;
+            place-items: center;
+            font-size: 1.2rem;
+            position: absolute;
+            right: 0;
+            .icon{
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .navbar{
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .navbar{
+        nav{
+            right: 0;
+            width: 99%;
+            border-radius: 0;
+            grid-template-columns: repeat(3, 1fr); 
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        padding: 0 .8rem;
+        .logo{
+            img{
+                width: 9rem;
+            }
+        }
+        nav {
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+        nav.active {
+            opacity: 1;
+            z-index: 10;
+            right: 0;
+        }
+    }
+}

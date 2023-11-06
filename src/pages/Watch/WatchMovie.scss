@@ -1,0 +1,136 @@
+
+@import '../../variable.scss';
+
+.movie_watch {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    padding: 0.8rem 0;
+    .top_navbar {
+        width: 90%;
+        height: auto;
+        border-radius: 0.5rem;
+        background: $text-dark;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-auto-flow: column;
+        padding: 1rem 1.6rem;
+        margin-bottom: .5rem;
+        .back_to_movie,
+        span {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-auto-flow: column;
+            gap: 1rem;
+            color: #fff;
+            a {
+                box-shadow: inset 0 0 5px $text-white;
+                padding: 0.5rem 1rem;
+                display: grid;
+                align-items: center;
+                gap: 0.5rem;
+                grid-auto-flow: column;
+                border-radius: 0.2rem;
+                color: #fff;
+                transition: all 0.5s;
+            }
+            a:hover {
+                box-shadow: inset 0 0 10px $text-white;
+            }
+            .heart {
+                color: #fff;
+                padding: 0.5rem;
+                cursor: pointer;
+                font-size: 1.9rem;
+                border-radius: 0.2rem;
+                background: #678;
+                transition: all 0.5s;
+            }
+            .heart:hover {
+                color: red;
+            }
+        }
+    }
+    main {
+        width: 90%;
+        height: 85vh;
+        border-radius: 0.5rem;
+        position: relative;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            filter: brightness(.5);
+        }
+        .play_btn {
+            position: absolute;
+            color: $text-white;
+            font-size: 1.5rem;
+            width: 7rem;
+            height: 3rem;
+            outline: none;
+            border: 0;
+            background: $text-dark;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all .2s ;
+        }
+        .play_btn:hover{
+            box-shadow: 0 0 5px $text-white;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .movie_watch {
+        height: auto;
+        main {
+            height: auto;
+            margin-top: 2rem;
+            video {
+                height: unset !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .back_to_movie {
+        .movie_name {
+            display: none !important;
+        }
+    }
+    .heart {
+        padding: 0.3rem !important;
+        cursor: pointer;
+        font-size: 1.5rem !important;
+        border-radius: 0.1rem !important;
+    }
+    span {
+        a {
+            font-size: 0.8rem;
+        }
+    }
+    main{
+        margin-top: 1rem !important;
+        .play_btn{
+            width: 6rem !important;
+            height: 2.5rem !important;
+        }
+    }
+}
